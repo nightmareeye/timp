@@ -13,4 +13,6 @@
 
 Добавлено в ветке branch1
 
+Добавлено в ветке master
+
 [readme.md](https://gitwork.ru/foxmulder/timp/-/blob/master/readme.md)
