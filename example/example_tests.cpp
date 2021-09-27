@@ -21,6 +21,6 @@ TEST_CASE("test2","[testgroup1]")
     
 }
 TEST_CASE("test3","[testgroup1]") {
-    REQUIRE_THROWS_AS(sum(0, 0), std::runtime_error);
-    REQUIRE_THROWS(sum(0, 0));
+    REQUIRE(sum(5,5)==11);
+    REQUIRE(sum(6,12)!=18);
 }
