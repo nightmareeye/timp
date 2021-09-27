@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/example_test.dir/example/example_tests.cpp.o CMakeFiles/example_test.dir/example/example.cpp.o  -o example_test 

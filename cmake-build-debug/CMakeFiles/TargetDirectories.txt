@@ -1,4 +1,0 @@
-/home/user/Desktop/timp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/user/Desktop/timp/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/user/Desktop/timp/cmake-build-debug/CMakeFiles/example_test.dir
-/home/user/Desktop/timp/cmake-build-debug/CMakeFiles/example_main.dir
