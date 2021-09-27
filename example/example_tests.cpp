@@ -20,8 +20,7 @@ TEST_CASE("test2","[testgroup1]")
     REQUIRE_THROWS(sum(0,0));
     
 }
-TEST_CASE("test3","[testgroup1]")
-{
-    REQUIRE(sum(5,10)==16);
-    REQUIRE(sum(5,5)!=10);
+TEST_CASE("test3","[testgroup1]") {
+    REQUIRE_THROWS_AS(sum(0, 0), std::runtime_error);
+    REQUIRE_THROWS(sum(0, 0));
 }
