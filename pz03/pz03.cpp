@@ -55,7 +55,24 @@ namespace task3 {
         return k;
     }
     int crypto(char* mas, char* mas2, char *mas3) {
-        int k = 0;
+        int k = 0;                      //Выводное значение: число байт
+        ifstream fin(mas);
+        ofstream fout(mas2, ios::trunc);
+        string line;
+        while (getline(fin, line)) {
+            int f = 0;
+            for (int i = 0; i < line.length(); i++) {
+                if (f > strlen(mas3)) f = 0;
+                char l;
+                l = line[i] ^ mas3[f];  //Шифрование XOR
+                f++;
+                fout << l;
+                k++;
+            }
+            fout << '\n';
+        }
+        fin.close();
+        fout.close();
         return k;
     }
 }
