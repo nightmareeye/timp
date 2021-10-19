@@ -1,8 +1,6 @@
-//
-// Created by user on 10/19/21.
-//
-
-#ifndef TEST_EMPTY_PZ03_H
-#define TEST_EMPTY_PZ03_H
-
-#endif //TEST_EMPTY_PZ03_H
+#pragma once
+namespace task3 {
+    int copier(char *mas, char *mas2);
+    double summ(char *mas);
+    int crypto(char *mas, char *mas2, char *mas3);
+}
