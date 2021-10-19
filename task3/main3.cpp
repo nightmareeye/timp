@@ -1,4 +1,4 @@
-#include "pz03.h"
+#include "task3.h"
 #include <iostream>
 
 using namespace task3;

@@ -5,4 +5,4 @@ set(CMAKE_CXX_STANDART 14)
 
 add_executable(example_test example/example_tests.cpp example/example.cpp)
 add_executable(example_main example/main.cpp example/example.cpp)
-add_executable(pz03 pz03/pz03.cpp pz03/main.cpp pz03/pz03.h)
+add_executable(task3_main task3/task3.cpp task3/main3.cpp task3/task3.h)
