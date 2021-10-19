@@ -5,17 +5,41 @@ using namespace task3;
 using namespace std;
 
 int main() {
-   while (true) {
+    setlocale(LC_CTYPE, "Russian");
+   while (true) {       //Меню выбора действий
+       cout << "Выберите дествие:" << endl;
+       cout << "1. Копирование текстовых файлов" << endl << "2. Суммирование положительных чисел с плавающей точкой из файла" << endl << "3. Шифрование файла" << endl << "4. Выход из программы" << endl;
         int x;
         cin >> x;
         switch (x) {
-            case (1) :
+            case (1) :      //Копирование файла
+                char finame[50];
+                printf("Введите название вводного файла \n");
+                scanf("%s", finame);
+                char finame2[50];
+                printf("Введите название выводного файла \n");
+                scanf("%s", finame2);
+
                 continue;
-            case (2):
+            case (2):       //Сумматор чисел с плавающей запятой
+                char fname[50];
+                printf("Введите название вводного файла \n");
+                scanf("%s", fname);
+
                 continue;
-            case (3) :
+            case (3) :      //Шифратор XOR
+                char filename[50];
+                printf("Введите название вводного файла \n");
+                scanf("%s", filename);
+                char filename2[50];
+                printf("Введите название выводного файла \n");
+                scanf("%s", filename2);
+                char code[100];
+                printf("Введите ключ шифрования \n");
+                scanf("%s", code);
+
                 continue;
-            case (4):
+            case (4):       //Выход из программы
                 return false;
         }
     }
