@@ -1,5 +1,9 @@
 #include "task03.h"
 #include <iostream>
+#include <string>
+#include <fstream>
+#include <sstream>
+#include <algorithm>
 
 using namespace std;
 
