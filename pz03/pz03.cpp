@@ -5,8 +5,8 @@ using namespace std;
 
 namespace task3 {
     int copier(char *mas, char *mas2) {
-        int k = 0;      //Выводное знаение: кол-во скопированных строк
-        string line;    //Пустая строка, считывающая строчки входного файла
+        int k = 0;                      //Выводное знаение: кол-во скопированных строк
+        string line;                    //Пустая строка, считывающая строчки входного файла
         ifstream fin(mas);
         ofstream fout(mas2, ios::app);
         while (fin) {
@@ -19,7 +19,39 @@ namespace task3 {
         return k;
     }
     double summ(char* mas) {
-        double k = 0;
+        double k = 0;                   //Выводное значение: сумма чисел
+        string line = "";
+        fstream temp;
+        string st = "";                 //Строка 1
+        string s = "";                  //Строка 2
+        temp.open(mas, fstream::in);
+        while (getline(temp, line)) {   //Помещение всех чисел файла построчно в строку 1
+            replace(line.begin(), line.end(), ',', '.');
+            st += line;
+            st += " ";
+        }
+        temp.close();
+        temp.open(mas, fstream::out | fstream::trunc);
+        temp << st;                     //Перезаписывание файла: строка 1
+        temp.close();
+        temp.open(mas, fstream::in);
+        while (getline(temp, line)) {   //Помещение всех чисел файла построчно с переносом строки в строку 2
+            replace(line.begin(), line.end(), ' ', '\n');
+            s += line;
+        }
+        temp.close();
+        cout << st << endl;
+        cout << s << endl;
+        temp.open(mas, fstream::out | fstream::trunc);
+        temp << s;                      //Перезаписывание файла: строка 2
+        temp.close();
+        temp.open(mas, fstream::in);
+        while (getline(temp, line)) {   //Суммирование чисел
+            double d = strtod(line.c_str(), NULL);
+
+            k += d;
+        }
+        temp.close();
         return k;
     }
     int crypto(char* mas, char* mas2, char *mas3) {
