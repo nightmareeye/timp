@@ -9,11 +9,12 @@
 using namespace std;
 
 namespace task3 {
-    string path="./data/";
+    string path="/home/user/timp/task3/data/";
     int copier(char *mas, char *mas2) {
         int k = 0;                      //Выводное знаение: кол-во скопированных строк
         string line;                    //Пустая строка, считывающая строчки входного файла
         ifstream fin(path + mas);
+
         ofstream fout(path + mas2, ios::app);
         while (fin) {
             getline(fin, line);
@@ -46,8 +47,6 @@ namespace task3 {
             s += line;
         }
         temp.close();
-        cout << st << endl;
-        cout << s << endl;
         temp.open(path + mas, fstream::out | fstream::trunc);
         temp << s;                      //Перезаписывание файла: строка 2
         temp.close();
