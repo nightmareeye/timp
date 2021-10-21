@@ -9,7 +9,7 @@
 using namespace std;
 
 namespace task3 {
-   // string path="/home/user/timp/task3/data/";
+   // string path="/home/user/timp/pz03/data/";
     int copier(char *mas, char *mas2) {
         int k = 0;                      //Выводное знаение: кол-во скопированных строк
         string line;                    //Пустая строка, считывающая строчки входного файла
