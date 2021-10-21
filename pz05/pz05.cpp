@@ -9,3 +9,9 @@ TEST_CASE("test1","[false]")
     REQUIRE(t1==-1);
 }
 
+TEST_CASE("test2", "[und]")
+{
+    int t2 = task3::copier("../pz03/data/pz05/eksdi.txt","../pz03/data/pz05/test1.3.txt");
+    REQUIRE(t2==-2);
+}
+
