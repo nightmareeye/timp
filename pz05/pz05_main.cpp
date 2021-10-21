@@ -1,4 +1,2 @@
-//
-// Created by user on 10/21/21.
-//
-
+#define CATCH_CONFIG_MAIN
+#include "../catch.hpp"
