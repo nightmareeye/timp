@@ -30,13 +30,13 @@ TEST_CASE("test4", "[false][summ]")
     REQUIRE(t4==-1);
 }
 
-TEST_CASE("test5", "[false][summ]")
+TEST_CASE("test5", "[und][summ]")
 {
     int t5 = task3::summ((char*)"../pz03/data/pz05/xx.txt");
     REQUIRE(t5==-2);
 }
 
-TEST_CASE("test6", "[false][summ]")
+TEST_CASE("test6", "[true][summ]")
 {
     double t6 = task3::summ((char*)"../pz03/data/pz05/test2.3.txt");
     REQUIRE(t6==136.9);
@@ -48,3 +48,8 @@ TEST_CASE("test7", "[false][crypto]")
     REQUIRE(t7==-1);
 }
 
+TEST_CASE("test7", "[und][crypto]")
+{
+    int t7 = task3::crypto((char*)"../pz03/data/pz05/test3.1.txt", (char*)"../pz03/data/pz05/test3.txt", (char*)"111111");
+    REQUIRE(t7==-1);
+}
