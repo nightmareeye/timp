@@ -12,7 +12,7 @@
 TEST_CASE("test1", "[testgroup1]")
 {
 	REQUIRE(sum(5, 10) == 15);
-	REQUIRE(sum(5,5) != 15);
+
 }
 TEST_CASE("test2","[testgroup1]")
 {
