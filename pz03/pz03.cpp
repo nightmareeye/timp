@@ -16,11 +16,11 @@ namespace task3 {
         ifstream fin(mas);
         char ch;
         if(!fin){
-            return -1;                  //-2, если не существует
+            return -2;                  //-2, если не существует
         }
         else {
             if(fin.peek()==EOF){
-                return 0;               //-1, если пустой
+                return -1;               //-1, если пустой
             }
             ofstream fout(mas2, ios::app);
             while (fin) {
@@ -40,7 +40,7 @@ namespace task3 {
         char ch;
         temp.open(mas, fstream::in);
         if(!temp){
-            return -2;                  //-2, если не существует
+            return -1;                  //-2, если не существует
         }
         else {
             if (temp.peek() == EOF) {
