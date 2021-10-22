@@ -29,3 +29,9 @@ TEST_CASE("test4", "[false]")
     int t4 = task3::summ((char*)"../pz03/data/pz05/test2.1.txt");
     REQUIRE(t4==-1);
 }
+
+TEST_CASE("test5", "[false]")
+{
+    int t5 = task3::summ((char*)"../pz03/data/pz05/xx.txt");
+    REQUIRE(t5==-2);
+}
