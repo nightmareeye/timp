@@ -40,7 +40,7 @@ namespace task3 {
         char ch;
         temp.open(mas, fstream::in);
         if(!temp){
-            return -1;                  //-2, если не существует
+            return -2;                  //-2, если не существует
         }
         else {
             if (temp.peek() == EOF) {
