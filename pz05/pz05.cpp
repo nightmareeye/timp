@@ -1,7 +1,7 @@
 #include <cstdio>
 
 #include "../pz03/pz03.h"
-#define CATCH_CONFIG_MAIN
+
 #include "../catch.hpp"
 
 
