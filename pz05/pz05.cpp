@@ -54,3 +54,8 @@ TEST_CASE("test8", "[und][crypto]")
     REQUIRE(t8==-2);
 }
 
+TEST_CASE("test9", "[true][crypto]")
+{
+    int t9 = task3::crypto((char*)"../pz03/data/pz05/test3.2.txt", (char*)"../pz03/data/pz05/test3.txt", (char*)"111111");
+    REQUIRE(t9==53);
+}
