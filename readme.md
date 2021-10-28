@@ -14,7 +14,7 @@
 Добавлено в ветке branch1
 
 <<<<<<< HEAD
-=======
+
 Add in branch 2-1
->>>>>>> branch2_1
+
 [readme.md](https://gitwork.ru/foxmulder/timp/-/blob/master/readme.md)
