@@ -8,7 +8,7 @@ int main()
     std::string keyEnteredMessage("Key Entered:");
     std::string mouseClickMessage("Mouse Click:");
 
-    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
+    sf::RenderWindow window(sf::VideoMode(200, 200), "foxmulder");
 
     sf::Font font;
 
