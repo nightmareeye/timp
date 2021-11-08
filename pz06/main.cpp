@@ -15,7 +15,7 @@ int NewThreadFunc(sf::RenderWindow & window) {
     text.setColor(sf::Color::Cyan);
     text.setPosition(10, 10);
     sf::String in;
-
+    bool costyl = true;
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
@@ -30,14 +30,17 @@ int NewThreadFunc(sf::RenderWindow & window) {
                 }
                 std::string wind = text.getString().toAnsiString();
                 if(wind.find("window") != std::string::npos) {
-                    window.setActive(false);
-                    time_t now = time(0);
-                    std::string dt = ctime(&now);
-                    std::string nm = "foxmulder-" + dt;
-                    sf::RenderWindow win(sf::VideoMode(800, 600), nm);
-                    sf::Thread newThread(NewThreadFunc, std::ref(win));
-                    newThread.launch();
-                    newThread.wait();
+                    if(costyl==true) {
+                        window.setActive(false);
+                        time_t now = time(0);
+                        std::string dt = ctime(&now);
+                        std::string nm = "foxmulder-" + dt;
+                        sf::RenderWindow win(sf::VideoMode(800, 600), nm);
+                        sf::Thread newThread(NewThreadFunc, std::ref(win));
+                        newThread.launch();
+                        newThread.wait();
+                    }
+                    costyl=false;
                 }
 
             }
