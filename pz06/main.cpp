@@ -29,8 +29,8 @@ int NewThreadFunc(sf::RenderWindow & window) {
                     in.insert(in.getSize(), '\n');
                 }
                 std::string wind = text.getString().toAnsiString();
-                if(wind.find("window") != std::string::npos) {
-                    if(costyl==true) {
+                if (wind.find("window") != std::string::npos) {
+                    if (costyl == true) {
                         window.setActive(false);
                         time_t now = time(0);
                         std::string dt = ctime(&now);
@@ -40,17 +40,22 @@ int NewThreadFunc(sf::RenderWindow & window) {
                         newThread.launch();
                         newThread.wait();
                     }
-                    costyl=false;
+                    costyl = false;
                 }
-
+            }
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Backspace))
+            {
+                if(in.getSize()>0){
+                    in.erase(in.getSize()-1, 1);}
+            }
             }
             text.setString(in.getData());
             window.clear();
             window.draw(text);
             window.display();
-        }
-        return 0;
+
     }
+        return 0;
 }
 
 int main() {
