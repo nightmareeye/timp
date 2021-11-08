@@ -21,6 +21,10 @@ int NewThreadFunc(sf::RenderWindow & window){
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
                 window.close();
+            if (event.type == sf::Event::TextEntered){
+                if(event.key.code != sf::Keyboard::Backspace){
+                    in.insert(in.getSize(), event.text.unicode);
+                }
 
         }
         text.setString(in.getData());
