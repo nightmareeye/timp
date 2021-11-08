@@ -4,16 +4,16 @@
 #include "string"
 #include <ctime>
 
-int NewThreadFunc(sf::RenderWindow & window){
+int NewThreadFunc(sf::RenderWindow & window) {
     window.setActive();
     sf::Font font;
-    if(!font.loadFromFile("/usr/share/fonts/truetype/ubuntu/Ubuntu-Th.ttf")){
+    if (!font.loadFromFile("/usr/share/fonts/truetype/ubuntu/Ubuntu-Th.ttf")) {
         return 0;
     }
     font.loadFromFile("/usr/share/fonts/truetype/ubuntu/Ubuntu-B.ttf");
-    sf::Text text("",font,20);
+    sf::Text text("", font, 20);
     text.setColor(sf::Color::Cyan);
-    text.setPosition(10,10);
+    text.setPosition(10, 10);
     sf::String in;
 
     while (window.isOpen()) {
@@ -21,21 +21,25 @@ int NewThreadFunc(sf::RenderWindow & window){
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
                 window.close();
-            if (event.type == sf::Event::TextEntered){
-                if(event.key.code != sf::Keyboard::Backspace){
+            if (event.type == sf::Event::TextEntered) {
+                if (event.key.code != sf::Keyboard::Backspace) {
                     in.insert(in.getSize(), event.text.unicode);
                 }
+                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
+                    in.insert(in.getSize(), '\n');
+                }
 
+            }
+            text.setString(in.getData());
+            window.clear();
+            window.draw(text);
+            window.display();
         }
-        text.setString(in.getData());
-        window.clear();
-        window.draw(text);
-        window.display();
+        return 0;
     }
-    return 0;
 }
 
-int main(){
+int main() {
     sf::RenderWindow window(sf::VideoMode(800, 600), "main window");
     sf::Thread mainThread(NewThreadFunc, std::ref(window));
     mainThread.launch();
