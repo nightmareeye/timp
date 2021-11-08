@@ -48,6 +48,11 @@ int NewThreadFunc(sf::RenderWindow & window) {
                 if(in.getSize()>0){
                     in.erase(in.getSize()-1, 1);}
             }
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Delete))
+            {
+                if(in.getSize()>0){
+                    in.erase(in.getSize()-1, 1);}
+            }
             }
             text.setString(in.getData());
             window.clear();
