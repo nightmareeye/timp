@@ -14,8 +14,18 @@ int NewThreadFunc(sf::RenderWindow & window){
     sf::Text text("",font,20);
     text.setColor(sf::Color::Cyan);
     text.setPosition(10,10);
+    sf::String in;
 
+    while (window.isOpen()) {
+        sf::Event event;
+        while (window.pollEvent(event)) {
 
+        }
+        text.setString(in.getData());
+        window.clear();
+        window.draw(text);
+        window.display();
+    }
     return 0;
 }
 
